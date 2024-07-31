@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Switch UI</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            transition: background-color 0.3s;
+        }
+
+        .toggle-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .toggle-input {
+            display: none;
+        }
+
+        .toggle-label {
+            width: 150px;
+            height: 75px;
+            background-color:#222;
+            border-radius: 75px;
+            position: relative;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            box-sizing: border-box;
+            transition: background-color 0.3s;
+        }
+
+        .toggle-ball {
+            width: 66px;
+            height: 66px;
+            background-color: #fff;
+            border-radius: 50%;
+            position: absolute;
+            left: 2px;
+            transition: transform 0.3s;
+        }
+
+        .toggle-input:checked + .toggle-label {
+            background-color: #000;
+        }
+
+        .toggle-input:checked + .toggle-label .toggle-ball {
+            transform: translateX(75px);
+        }
+
+        .toggle-icon {
+            font-size: 40px;
+            color: #FFD700; 
+        }
+
+        #message {
+            font-size: 70px;
+            color: #333;
+            transition: color 0.3s;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="toggle-container">
+        <input type="checkbox" id="toggle" class="toggle-input">
+        <label for="toggle" class="toggle-label">
+            <span class="toggle-icon">&#x2600;</span> <!-- Unicode for sun icon -->
+            <div class="toggle-ball"></div>
+            <span class="toggle-icon">&#x1F319;</span> <!-- Unicode for moon icon -->
+        </label>
+    </div>
+    <h1 id="message">Click on the Toggle Button</h1>
+
+    <script src="index.js">
+    </script>
+</body>
+</html>
